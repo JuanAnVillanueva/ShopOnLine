@@ -61,15 +61,19 @@ public class mein {
         System.out.println("Cuantos productos vas a ingresar en la compra: ");
         int candP = lector.nextInt();
         ArrayList<Producto> productos = new ArrayList<>();
-        mostrarProduntos(remera, pantalon, accesorio, lector, productos, venta);
+        for (int i = 0; i < candP; i++) {
+           mostrarProduntos(remera, pantalon, accesorio, lector, productos, venta); 
+        }
+        venta.agregarProducto(productos);
+        venta.imprimirFactura();
     }
     
     private static Cliente cargarCliente(Scanner lector) {
-        System.out.println("cual es su nombre");
+        System.out.println("Cual es su nombre");
         String nom = lector.next();
-        System.out.println("cual es su apellido");
+        System.out.println("Cual es su apellido ");
         String ape = lector.next();
-        System.out.println("cual es su dni");
+        System.out.println("Cual es su dni ");
         int DNI = lector.nextInt();   
         Cliente cliente = new Cliente(nom, ape, DNI);
         return cliente;
@@ -92,9 +96,6 @@ public class mein {
                 productos.add(MostrarAccesorios(accesorio, lector));
                 break;
         }
-        venta.agregarProducto(productos);
-        venta.imprimirFactura();
-        
     }
 
     private static Remera MostrarRemeras(Remera[] remera, Scanner lector, ArrayList<Producto> productos) {
