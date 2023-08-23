@@ -1,4 +1,3 @@
-
 package com.mycompany.poo_shop_on_line;
 
 import java.time.LocalDate;
