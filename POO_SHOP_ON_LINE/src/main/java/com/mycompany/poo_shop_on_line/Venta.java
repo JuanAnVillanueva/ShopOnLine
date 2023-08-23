@@ -1,17 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.poo_shop_on_line;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-/**
- *
- * @author CS09
- */
+
 public class Venta {
     private ArrayList <Producto> listaProd;
     private Cliente cliente;
