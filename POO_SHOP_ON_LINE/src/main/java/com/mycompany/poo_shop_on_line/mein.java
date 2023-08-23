@@ -18,8 +18,9 @@ public class mein {
         System.out.println("cuantas ventas aras");
         int num = lector.nextInt();
         Venta[] venta = new Venta[num-1];
-        cargarVenta(remera, pantalon, accesorio, lector);
-        
+        for (int i = 0; i < num; i++) {
+            cargarVenta(remera, pantalon, accesorio, lector);
+        }
     }
 
     private static void cargarRemera(Remera[] remera) {
@@ -31,10 +32,6 @@ public class mein {
         remera[5] = new Remera("negro", 7000.00, "L");
         remera[6] = new Remera("blanco", 7500.00, "XL");
         remera[7] = new Remera("negro", 7000.00, "XL");  
-        System.out.println("reme");
-        for(Remera re : remera){
-            System.out.println(re.getPrecio());
-        }
     }
 
     private static void cargarPantalon(Pantalon[] pantalon) {
@@ -44,10 +41,6 @@ public class mein {
        pantalon[3] = new Pantalon("negro", 7500.00, 5, "Skinny");
        pantalon[4] = new Pantalon("azul", 7500.00, 4, "Recto");
        pantalon[5] = new Pantalon("negro", 7500.00, 5, "Recto");
-        System.out.println("panta");
-        for (Pantalon pa : pantalon) {
-            System.out.println(pa.getPrecio());
-        }
     }
 
     private static void cargarAccesorio(Accesorio[] accesorio) {
@@ -57,18 +50,14 @@ public class mein {
         accesorio[3] = new Accesorio("pulsera", 7500.00, "Plata", 15);
         accesorio[4] = new Accesorio("collar", 8500.00, "Oro", 15);
         accesorio[5] = new Accesorio("pulsera", 7500.00, "Oro", 15);
-        System.out.println("acc");
-        for (Accesorio ac : accesorio) {
-            System.out.println(ac.getPrecio());
-        }
     }
 
     private static void cargarVenta(Remera[] remera, Pantalon[] pantalon, Accesorio[] accesorio,Scanner lector) {
-        System.out.println("Ingresamos las credenciales de el cliente:");
+        System.out.println("Ingresamos las credenciales de el cliente: ");
         Cliente cliente = cargarCliente(lector);
         Venta venta = null;
         LocalDate hoy = LocalDate.now();
-        venta = new Venta(cliente,hoy);
+        venta = new Venta(cliente, hoy);
         System.out.println("Cuantos productos vas a ingresar en la compra: ");
         int candP = lector.nextInt();
         ArrayList<Producto> productos = new ArrayList<>();
